@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Cursor } from "./components/Cursor";
 import { Header } from "./components/Header";
 import { Preloader } from "./components/Preloader";
+import { ScrollShovel } from "./components/ScrollShovel";
 import { WhatsAppFab } from "./components/WhatsAppFab";
 import { Coverage } from "./sections/Coverage";
 import { Fleet } from "./sections/Fleet";
@@ -72,6 +73,7 @@ export const App = () => {
       </main>
       <Footer />
       <WhatsAppFab />
+      <ScrollShovel visible={introDone} />
     </>
   );
 };

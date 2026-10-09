@@ -9,6 +9,7 @@ import "./styles/leveling.css";
 import "./styles/process.css";
 import "./styles/quote.css";
 import "./styles/footer.css";
+import "./styles/shovel.css";
 import { App } from "./App";
 
 createRoot(document.getElementById("root")!).render(

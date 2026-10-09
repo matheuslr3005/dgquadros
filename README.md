@@ -49,3 +49,9 @@ Respeita `prefers-reduced-motion`, funciona sem WebGL (mostra aviso no lugar do 
 - Textos de "Como funciona", descrições dos serviços e da frota são redação nova a partir do plano — revisar com o Danilo e o Jr.
 - O site ainda não tem fotos/vídeos reais. Depois do dia de gravação, dá para trocar as cenas 3D (ou complementá-las) por vídeo de obra no hero e fotos da frota.
 - Avaliações do Google: o plano cita prova social como diferencial dos concorrentes; ainda não há avaliações da D.G. para exibir, então nenhuma foi inventada.
+
+## Deploy
+
+O workflow `.github/workflows/deploy.yml` publica no GitHub Pages a cada push. Ative uma vez em
+**Settings → Pages → Source: GitHub Actions**. O site fica em `https://matheuslr3005.github.io/dgquadros/`.
+Com domínio próprio (dgdequadros.com.br), troque `BASE_PATH` para `/` no workflow e configure o domínio em Pages.

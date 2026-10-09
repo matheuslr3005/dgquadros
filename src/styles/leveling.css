@@ -1,0 +1,149 @@
+/* ---------- leveling (scroll scene) ---------- */
+.leveling {
+  position: relative;
+  height: 420vh;
+  background: var(--sand);
+}
+.leveling__sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+  color: var(--ink);
+}
+.leveling__canvas {
+  position: absolute;
+  inset: 0;
+}
+.leveling__canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.leveling__copy {
+  position: absolute;
+  z-index: 2;
+  top: calc(var(--header-h) + 20px);
+  left: var(--gutter);
+  width: min(500px, calc(100vw - 2 * var(--gutter)));
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 26px 24px;
+  border-radius: var(--radius);
+  background: rgba(242, 239, 232, 0.86);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  box-shadow: 0 24px 60px -30px rgba(28, 29, 31, 0.5), inset 0 0 0 1px rgba(28, 29, 31, 0.08);
+  pointer-events: none;
+}
+.leveling__copy .eyebrow { color: var(--earth); }
+.leveling__phase { min-height: 250px; }
+.leveling__phase h2 { margin: 12px 0 14px; color: var(--ink); font-size: clamp(2.6rem, 5.6vw, 5rem); }
+.leveling__phase .lead { color: #4e4b45; max-width: 38ch; }
+.leveling__tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  background: var(--graphite);
+  color: var(--sand);
+}
+.leveling__tag--during { background: var(--yellow); color: var(--graphite); }
+.leveling__tag--after { background: var(--earth); color: var(--sand); }
+
+.leveling__meter {
+  position: absolute;
+  z-index: 2;
+  left: var(--gutter);
+  right: calc(var(--gutter) + 170px);
+  bottom: 28px;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: end;
+  gap: clamp(20px, 4vw, 56px);
+  padding: 16px 28px 18px;
+  border-radius: var(--radius);
+  background: rgba(242, 239, 232, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 24px 60px -30px rgba(28, 29, 31, 0.5), inset 0 0 0 1px rgba(28, 29, 31, 0.08);
+  pointer-events: none;
+}
+.leveling__readout {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.leveling__readout-label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+.leveling__readout strong {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3rem, 6.4vw, 5.4rem);
+  line-height: 0.85;
+  font-variant-numeric: tabular-nums;
+}
+.leveling__readout small { font-size: 0.45em; margin-left: 4px; color: var(--earth); }
+.leveling__steps {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 78px;
+}
+.leveling__steps span {
+  width: clamp(14px, 2vw, 24px);
+  background: rgba(28, 29, 31, 0.14);
+  transition: background 0.35s var(--ease-out), transform 0.4s var(--ease-out);
+  transform-origin: bottom;
+}
+.leveling__steps span.is-on { background: var(--graphite); }
+.leveling__steps span.is-on:last-child { background: var(--yellow); }
+.leveling__bar {
+  height: 8px;
+  align-self: center;
+  background: rgba(28, 29, 31, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.leveling__bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--earth), var(--yellow));
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.leveling__hint {
+  position: absolute;
+  z-index: 2;
+  right: var(--gutter);
+  top: calc(var(--header-h) + 24px);
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+.leveling__hint span { display: inline-block; animation: bob 1.4s var(--ease-out) infinite; }
+
+@media (max-width: 800px) {
+  .leveling { height: 360vh; }
+  .leveling__phase { min-height: 220px; }
+  .leveling__meter { grid-template-columns: auto 1fr; bottom: 16px; padding: 12px 18px; right: calc(var(--gutter) + 72px); }
+  .leveling__copy { padding: 16px 18px 18px; }
+  .leveling__steps { display: none; }
+  .leveling__hint { display: none; }
+  .leveling__copy { gap: 10px; }
+}

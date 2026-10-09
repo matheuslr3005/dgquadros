@@ -10,7 +10,7 @@ import { Dust } from "./Dust";
 import type { DustHandle } from "./Dust";
 import { Excavator, EXCAVATOR_REST_POSE } from "./machines/Excavator";
 import type { ExcavatorPose } from "./machines/Excavator";
-import { soil, soilDark, sandStone } from "./materials";
+import { soil, soilDark } from "./materials";
 import { Stake } from "./Stake";
 import { Studio } from "./Studio";
 
@@ -37,26 +37,6 @@ const makeMoundGeometry = (seed: number, radius: number): BufferGeometry => {
   geometry.computeVertexNormals();
   return geometry;
 };
-
-const Terraces = () => (
-  <group position={[0, 0, -5.8]}>
-    {[0, 1, 2, 3].map((tier) => {
-      const width = 12.5 - tier * 1.5;
-      const centerX = 6.5 + tier * 0.75;
-      const height = (tier + 1) * 0.55;
-      return (
-        <group key={tier} position={[centerX, 0, -tier * 1.7]}>
-          <mesh position={[0, height / 2, 0]} castShadow receiveShadow material={tier % 2 === 0 ? soil : soilDark}>
-            <boxGeometry args={[width, height, 1.7]} />
-          </mesh>
-          <mesh position={[0, height + 0.02, 0]} receiveShadow material={sandStone}>
-            <boxGeometry args={[width, 0.06, 1.68]} />
-          </mesh>
-        </group>
-      );
-    })}
-  </group>
-);
 
 export const HeroScene = ({ scrollRef, pokeRef, compact = false }: HeroSceneProps) => {
   const machine = useRef<Group>(null);
@@ -161,8 +141,6 @@ export const HeroScene = ({ scrollRef, pokeRef, compact = false }: HeroSceneProp
         <ringGeometry args={[9.3, 9.5, 120]} />
         <meshBasicMaterial color="#f5b700" />
       </mesh>
-
-      <Terraces />
 
       {/* dirt piles */}
       <mesh geometry={mounds.main} material={soil} position={[5.9, 0, 0.5]} castShadow receiveShadow />

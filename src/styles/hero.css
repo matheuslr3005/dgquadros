@@ -212,7 +212,7 @@
   color: var(--yellow);
   font-variant-numeric: tabular-nums;
 }
-.numbers__item span:last-child {
+.numbers__item > span:last-child {
   font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;

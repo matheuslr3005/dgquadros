@@ -35,5 +35,4 @@ export const light = new MeshStandardMaterial({
 });
 export const soil = new MeshStandardMaterial({ color: "#7a4d24", roughness: 1, flatShading: true });
 export const soilDark = new MeshStandardMaterial({ color: "#5d3a1a", roughness: 1, flatShading: true });
-export const sandStone = new MeshStandardMaterial({ color: "#cdbf9f", roughness: 0.95, flatShading: true });
 export const drumSteel = new MeshStandardMaterial({ color: "#a3a8ae", roughness: 0.5, metalness: 0.55 });

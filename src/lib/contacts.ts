@@ -21,6 +21,11 @@ export const COMPANY = {
   site: "dgdequadros.com.br",
 } as const;
 
+export const CREDIT = {
+  name: "Lax",
+  instagramUrl: "https://www.instagram.com/laxassessoria/",
+} as const;
+
 export const buildWhatsAppUrl = (whatsappNumber: string, message: string): string =>
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 

@@ -185,6 +185,8 @@
   color: var(--muted);
 }
 .footer__legal a:hover { color: var(--yellow); }
+.footer__credit a { color: var(--sand); font-weight: 600; text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.footer__credit a:hover { color: var(--yellow); }
 
 @media (max-width: 1000px) {
   .footer__cols { grid-template-columns: 1fr 1fr; }

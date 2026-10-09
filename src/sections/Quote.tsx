@@ -52,7 +52,11 @@ export const Quote = () => {
           <p className="eyebrow" data-reveal>
             Orçamento
           </p>
-          <SplitHeading className="display-lg">Monte o pedido. A gente responde no zap.</SplitHeading>
+          <SplitHeading className="display-lg quote__title">
+            Monte o pedido.
+            <br />
+            A&nbsp;gente responde no&nbsp;WhatsApp.
+          </SplitHeading>
           <p className="lead" data-reveal>
             Responda em 30 segundos. Sua mensagem já vai pronta para o WhatsApp do Danilo ou do Jr., sem cadastro e sem formulário perdido.
           </p>

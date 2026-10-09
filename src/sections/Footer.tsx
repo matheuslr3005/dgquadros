@@ -2,7 +2,7 @@ import { useRef } from "react";
 import type { PointerEvent } from "react";
 import { ArrowIcon, InstagramIcon, PhoneIcon, PinIcon, WhatsAppIcon } from "../components/Icons";
 import { Logo } from "../components/Logo";
-import { CONTACTS, COMPANY, buildWhatsAppUrl, DEFAULT_MESSAGE } from "../lib/contacts";
+import { CONTACTS, COMPANY, CREDIT, buildWhatsAppUrl, DEFAULT_MESSAGE } from "../lib/contacts";
 
 export const Footer = () => {
   const bigRef = useRef<HTMLParagraphElement>(null);
@@ -82,6 +82,12 @@ export const Footer = () => {
 
         <div className="footer__legal">
           <span>© {new Date().getFullYear()} D.G. de Quadros Terraplanagem e Transportes</span>
+          <span className="footer__credit">
+            Produzido por{" "}
+            <a href={CREDIT.instagramUrl} target="_blank" rel="noreferrer" data-cursor="link">
+              {CREDIT.name}
+            </a>
+          </span>
           <a href="#topo" data-cursor="link">
             Voltar ao topo ↑
           </a>
